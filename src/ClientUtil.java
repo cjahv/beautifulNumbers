@@ -77,6 +77,8 @@ public class ClientUtil {
             conn.setRequestProperty("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
             conn.setRequestProperty("Accept-Language", "zh-cn,zh;q=0.5");
             conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36");
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            conn.setRequestProperty("Cookie","JSESSIONID=220A6C7432F18ACF223C1588530C6070; dqmhIpCityInfos=%E9%87%8D%E5%BA%86%E5%B8%82+%E7%94%B5%E4%BF%A1; flow_analysis_key=2e7be93ee71b7a476fd7581a64e1c6da; lvid=4570d8f2629011de9b42154c47c664f3; nvid=1; SHOPID_COOKIEID=10004; trkHmCitycode=0; trkHmCoords=0; trkHmPageName=0; recentview=M1317C1008-1073S20160929108161&; ecsc_session_uuid=\"ebf6a43213b84c7fb734ba6ec3a4e5bb:1480596246797\"; _ecsc_area_key=1088; s_cc=true; trkHmClickCoords=600%2C527%2C11922; s_fid=23461157F4788009-387C57CF7FC2BEFA; cityCode=cq; loginStatus=non-logined; trkId=C9068E6F-B608-4C8F-956E-6F9DC4E15E54; s_sq=eshipeship-189-all%3D%2526pid%253D%25252Fmall%25252Fgoods%25252FM1317C1008-1073S20160929108161%2526pidt%253D1%2526oid%253Djavascript%25253A%2526ot%253DA");
             conn.setConnectTimeout(connectTimeout);
             conn.setReadTimeout(readTimeout);
             return conn;

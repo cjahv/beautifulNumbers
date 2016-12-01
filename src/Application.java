@@ -10,16 +10,17 @@ import java.util.*;
  */
 public class Application {
     private static String url = "http://cq.189.cn/mall/sales/num/list/new";//189.cn 号码获取接口
-    private static String head = "";//号段 133,153,189,177
-    private static int groupMax = 10;//获取组数
+    private static String head = "189";//号段 133,153,189,177
+    private static int groupMax = 20;//获取组数
     private static boolean not4 = true;//带4减分
     private static boolean end6 = true;//带6加分
     private static boolean end8 = true;//带8加分
+    private static int show=1000;//显示至少大于show分
 
     private static Map<String, Object> map = new HashMap<>();
 
     public static void main(String... args) {
-        map.put("numberRepo", -1);
+        map.put("numberRepo", -5);
         map.put("area", "0000");
         map.put("head", head);
         map.put("stored_charges_limit", "no_limit");
@@ -67,7 +68,10 @@ public class Application {
             while (map.get(l) != null) l++;
             map.put(l, phone);
         }
-        map.forEach((i, s) -> System.out.println(i/10000 + "\t" + s));
+        map.forEach((i, s) -> {
+            if(i<show) return;
+            System.out.println(i / 10000 + "\t" + s);
+        });
     }
 
     private static Set<String> getAllPhone() {
